@@ -4,6 +4,8 @@ local mHeight = 0;
 
 local mCursorX = 1;
 local mCursorY = 1;
+local mScrollX = 0;
+local mScrollY = 0;
 local lines = {};
 
 if not monitor then
@@ -58,18 +60,18 @@ local function writeAt(s, x, y)
     monitor.write(s);
 end
 
-local function scrollUp(steps)
-    
-end
+local function scrollTo(x, y)
+    local cursorY = 1;
+    monitor.clear();
+    monitor.setCursorPos(1, cursorY);
 
-local function scrollDown(steps)
-    
-end
+    for i = 1 + y, #lines, 1 do
+        if lines[i] then
+            monitor.write(string.sub(lines[i], x));
+        end
+        cursorY = cursorY + 1;
+        monitor.setCursorPos(1, cursorY);
+    end
 
-local function scrollLeft(steps)
-    
-end
-
-local function scrollRight(steps)
-    
+    monitor.setCursorPos(mCursorX, mCursorY);
 end
