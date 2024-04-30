@@ -1,0 +1,20 @@
+{
+	drop=function(slot:int[limit:int[direction:string]]):int -- Drop an item on the ground. Returns the number of items dropped
+	getEUCapacity=function():int -- The maximum amount of EU that can be stored
+	getMetadata=function():table -- Get metadata about this object
+	getOfferedEnergy=function():number -- EU output provided per tick
+	getTransferLocations=function([location:string]):table -- Get a list of all available objects which can be transferred to or from
+	getItemMeta=function(slot:int):table|nil -- The metadata of the item in the specified slot. The slot number starts from 1.
+	getItem=function(slot:int):table|nil -- The item in the specified slot. The slot number starts from 1.
+	getDemandedEnergy=function():number -- The maximum amount of EU that can be received
+	list=function():table -- List all items in this inventory
+	getDocs=function([name: string]):string|table -- Get the documentation for all functions or the function specified. Errors if the function cannot be found.
+	getEUStored=function():int -- The amount of EU currently stored
+	getSourceTier=function():int -- The tier of this EU source. 1 = LV, 2 = MV, 3 = HV, 4 = EV etc.
+	size=function():int -- The size of the inventory
+	pullItems=function(fromName:string, fromSlot:int[limit:int[toSlot:int]]):int -- Pull items to this inventory from another inventory. Returns the amount transferred.
+	getSinkTier=function():int -- The tier of this EU sink. 1 = LV, 2 = MV, 3 = HV, 4 = EV etc.
+	suck=function([slot:int[limit:int]]):int -- Suck an item from the ground
+	getEUOutput=function():number -- The maximum EU output per tick
+	pushItems=function(toName:string, fromSlot:int[limit:int[toSlot:int]]):int -- Push items from this inventory to another inventory. Returns the amount transferred.
+}
