@@ -16,7 +16,7 @@ local function base64Decode(data)
 end
 
 -- GitHub Repository Informationen
-local owner = "Ste4lthPr0xy"  -- Besitzer des Repositories
+local owner = "MarvinBrill"  -- Besitzer des Repositories
 local repo = "ComputerCraftLuaStuff"    -- Name des Repositories
 local filepath = "Debug.lua"  -- Pfad zur Datei im Repository
 
